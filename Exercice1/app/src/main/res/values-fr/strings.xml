@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercice1</string>
+    <string name="name">Prénom</string>
+    <string name="surname">Nom</string>
+    <string name="birthday">Date de naissance</string>
+    <string name="videogames">Jeux Vidéos</string>
+    <string name="reading">Lecture</string>
+    <string name="music">Musique</string>
+    <string name="submit">Soumettre</string>
+</resources>
