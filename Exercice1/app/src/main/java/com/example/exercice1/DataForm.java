@@ -3,7 +3,7 @@ package com.example.exercice1;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class DataForm implements Parcelable {
+public class DataForm {
     private String name, surname, date, email;
     private boolean sport, music, reading, videogames;
 
@@ -17,29 +17,6 @@ public class DataForm implements Parcelable {
         this.reading = reading;
         this.videogames = videogames;
     }
-
-    protected DataForm(Parcel in) {
-        name = in.readString();
-        surname = in.readString();
-        date = in.readString();
-        email = in.readString();
-        sport = in.readByte() != 0;
-        music = in.readByte() != 0;
-        reading = in.readByte() != 0;
-        videogames = in.readByte() != 0;
-    }
-
-    public static final Creator<DataForm> CREATOR = new Creator<DataForm>() {
-        @Override
-        public DataForm createFromParcel(Parcel in) {
-            return new DataForm(in);
-        }
-
-        @Override
-        public DataForm[] newArray(int size) {
-            return new DataForm[size];
-        }
-    };
 
     @Override
     public String toString() {
@@ -119,20 +96,4 @@ public class DataForm implements Parcelable {
         this.videogames = videogames;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(name);
-        parcel.writeString(surname);
-        parcel.writeString(date);
-        parcel.writeString(email);
-        parcel.writeByte((byte) (sport ? 1 : 0));
-        parcel.writeByte((byte) (music ? 1 : 0));
-        parcel.writeByte((byte) (reading ? 1 : 0));
-        parcel.writeByte((byte) (videogames ? 1 : 0));
-    }
 }
